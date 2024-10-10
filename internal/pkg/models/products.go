@@ -1,9 +1,9 @@
 package models
 
 type Product struct {
-	Product_name string `json:"name" gorm:"primaryKey"`
-	Article_id   string `json:"art_id"`
-	Amount_of    string `json:"amount_of"`
+	Product_name string `json:"name" gorm:"product_name"`
+	Article_id   string `json:"art_id" gorm:"article_id"`
+	Amount_of    string `json:"amount_of" gorm:"amount_of"`
 }
 
 type ProductsRequest struct {

@@ -42,10 +42,9 @@ func UpdateInventory(c *fiber.Ctx) error {
 		return c.Status(500).JSON(err.Error())
 	}
 
-	response.Stock = updateInv.Stock
-	database.Database.Db.Save(&response)
+	database.Database.Db.Save(&updateInv)
 
-	return c.Status(200).JSON(response)
+	return c.Status(200).JSON(updateInv)
 
 }
 

@@ -30,6 +30,9 @@ func setUpRoutes(app *fiber.App) {
 	// Product Routes
 	app.Post("/ikea/products/saveproducts", routes.CreateProducts)
 	app.Get("/ikea/products", routes.GetAllProducts)
+
+	// IKEA Handlers
+	app.Get("ikea/items/availableforsale", routes.CalculateAvailableProducts)
 }
 
 func welcome(c *fiber.Ctx) error {
