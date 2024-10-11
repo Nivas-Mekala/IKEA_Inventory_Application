@@ -1,26 +1,25 @@
 version: '3'
 services:
   app:
-    build: 
-      context: .
+    build: .
     restart: always
     ports:
       - 3000:3000
     volumes:
       - .:/app
-    command: go run cmd/api/main.go -b 0.0.0.0
     depends_on:
       - mysqldb-docker
   
   mysqldb-docker:
     image: mysql:8.4
+    container_name: godockerDB
     restart: always
     ports:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=ikea_app
-      - MYSQL_USER=root
+      - MYSQL_USER=savin
       - MYSQL_PASSWORD=password
     volumes:
       - mysqldb:/var/lib/mysql

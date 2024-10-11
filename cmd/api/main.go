@@ -14,7 +14,7 @@ func main() {
 	app := fiber.New()
 	setUpRoutes(app)
 
-	log.Fatal(app.Listen("127.0.0.1:8080"))
+	log.Fatal(app.Listen("0.0.0.0:3000"))
 }
 
 func setUpRoutes(app *fiber.App) {
